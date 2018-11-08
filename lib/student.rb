@@ -62,10 +62,8 @@ end
   end
 
   def self.new_from_db(array)
-    array.each do |one_row|
     Student.new(array[1], array[2], array[0])
-  end
-    # binding.pry
+    #binding.pry
   end
 
 
@@ -79,24 +77,7 @@ end
     WHERE name = ?
     SQL
     new = DB[:conn].execute(sql, name)
-    new_from_db(new)
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #binding.pry
+    new_from_db(new[0])
+  end
 end
